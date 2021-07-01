@@ -26,43 +26,7 @@ class TestClass3: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testSignIn() {
-        let app = XCUIApplication(bundleIdentifier: "com.pcloudy.TestmunkDemo")
-        app.buttons["SIGN IN"].tap()
-        // app.buttons["Ok"].tap()
-        
-        app.textFields["Email"].tap()
-        app.textFields["Email"].typeText("test@testname.com")
-        app.secureTextFields["Password"].tap()
-        app.secureTextFields["Password"].typeText("testmunkdemo")
-        app.buttons["SIGN IN"].tap()
-        app.buttons["Ok"].tap()
-        
-        app.textFields["Email"].tap()
-        
-        let fullScreenshot = XCUIScreen.main.screenshot()
-        let screenshot = XCTAttachment(screenshot: fullScreenshot)
-        screenshot.lifetime = .keepAlways
-        // if we don't set lifetime to .keepAlways, Xcode will delete the image if the test passes.
-        
-        add(screenshot)
-        
-        for _ in 0...16 {
-            app.keys["delete"].tap()
-        }
-        
-        /*
-         app.keys["delete"].tap()
-         */
-        app.typeText("test@pcloudy.com")
-        // or use app.keys["delete"].tap() if you have keyboard enabled
-        
-        // app.textFields["Email"].typeText("test@testname.com")
-        app.secureTextFields["Password"].tap()
-        app.secureTextFields["Password"].typeText("testmunk")
-        app.buttons["SIGN IN"].tap()
-        app.buttons["Skip"].tap()
-    }
+    
     
     func testSegments() {
         let app = XCUIApplication(bundleIdentifier: "com.pcloudy.TestmunkDemo")
