@@ -1,6 +1,0 @@
-framework module ImageInjectionFramework {
-  umbrella header "ImageInjectionFramework.h"
-
-  export *
-  module * { export * }
-}
